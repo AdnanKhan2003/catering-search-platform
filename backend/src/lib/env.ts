@@ -10,11 +10,11 @@ const getEnv = (key: string, defaultValue?: string) => {
     return value;
 };
 
-const PORT = getEnv('PORT', '3000');
+const PORT = getEnv('PORT', '5000');
 const MONGO_URI = getEnv('MONGO_URI');
 const NODE_ENV = getEnv('NODE_ENV');
 
-export { 
+export {
     PORT,
     MONGO_URI,
     NODE_ENV
