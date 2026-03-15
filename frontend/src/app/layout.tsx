@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: "Catering Search | Find Your Perfect Caterer",
-  description: "A premium platform to search and filter the best caterers in your area.",
+  title: "CaterHub | Modern Catering Search",
+  description: "A clean, minimalist platform to find perfect caterers for your events.",
 };
 
 export default function RootLayout({
@@ -20,9 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} font-sans antialiased bg-zinc-50 dark:bg-black text-zinc-900 dark:text-zinc-100 min-h-screen`}
+        className={`${inter.variable} font-sans antialiased bg-white dark:bg-[#191919] text-[#111111] dark:text-white min-h-screen`}
       >
-        <div className="fixed inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.05),transparent_50%)] pointer-events-none" />
         {children}
       </body>
     </html>
