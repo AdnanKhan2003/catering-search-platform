@@ -8,7 +8,6 @@ import {
   ArrowLeft, 
   Plus, 
   MapPin, 
-  Star,
   Loader2,
   CheckCircle2,
   X,
@@ -94,9 +93,9 @@ export default function AddCatererPage() {
         </div>
       </div>
 
-      <main className="max-w-2xl mx-auto px-6 pt-10 pb-20">
+      <main className="max-w-3xl mx-auto px-6 pt-4 pb-20">
         <div className="mb-16">
-          <h1 className="text-3xl font-bold text-[#111111] dark:text-white mb-4 italic">Register Partner</h1>
+          <h1 className="text-3xl font-bold text-[#111111] dark:text-white mb-4">Register Partner</h1>
           <p className="text-sm text-zinc-500 font-medium">Provide the business details to list on the platform.</p>
         </div>
 
@@ -164,7 +163,12 @@ export default function AddCatererPage() {
                 placeholder="Press Enter to add..."
                 value={newCuisine}
                 onChange={(e) => setNewCuisine(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleAddCuisine(e as any)}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    handleAddCuisine(e as unknown as React.FormEvent);
+                  }
+                }}
                 className="flex-grow px-0 py-2 bg-transparent border-b border-zinc-200 dark:border-zinc-800 focus:outline-none focus:border-blue-600 transition-colors text-sm font-medium"
               />
               <button 

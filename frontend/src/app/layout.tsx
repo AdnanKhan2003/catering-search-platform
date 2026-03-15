@@ -9,7 +9,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "CaterHub | Modern Catering Search",
-  description: "A clean, minimalist platform to find perfect caterers for your events.",
+  description: "A professional platform for discovering and booking catering services.",
 };
 
 export default function RootLayout({

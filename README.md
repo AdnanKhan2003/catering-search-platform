@@ -7,7 +7,7 @@ A minimalist, responsive directory for discovering and booking premium caterers 
 - **Caterer Discovery**: Search by name and filter by price per plate.
 - **Detailed Profiles**: Document-style views for each caterer with cuisine and location details.
 - **Partner Registration**: Seamless boarding for new catering businesses.
-- **Responsive Design**: Optimized for mobile, tablet, and desktop with a Notion-inspired aesthetic.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop.
 
 ## Tech Stack
 

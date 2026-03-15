@@ -10,7 +10,6 @@ import Link from "next/link";
 
 export default function CaterersPage() {
   const [caterers, setCaterers] = useState<Caterer[]>([]);
-  const [filteredCaterers, setFilteredCaterers] = useState<Caterer[]>([]);
   const [loading, setLoading] = useState(true);
   
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,20 +20,16 @@ export default function CaterersPage() {
       setLoading(true);
       const data = await getCaterers();
       setCaterers(data);
-      setFilteredCaterers(data);
       setLoading(false);
     }
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const filtered = caterers.filter((c) => {
-      const matchesSearch = c.name.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesPrice = c.pricePerPlate <= maxPrice;
-      return matchesSearch && matchesPrice;
-    });
-    setFilteredCaterers(filtered);
-  }, [searchQuery, maxPrice, caterers]);
+  const filteredCaterers = caterers.filter((c) => {
+    const matchesSearch = c.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesPrice = c.pricePerPlate <= maxPrice;
+    return matchesSearch && matchesPrice;
+  });
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#191919]">
@@ -53,7 +48,7 @@ export default function CaterersPage() {
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-6 pt-4 pb-12">
         <header className="mb-12">
           <h1 className="text-3xl font-bold text-[#111111] dark:text-white mb-2 italic">Caterers in Mumbai</h1>
           <p className="text-zinc-500 text-sm">Find and book the best culinary partners for your event.</p>

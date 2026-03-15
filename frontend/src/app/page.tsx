@@ -20,7 +20,7 @@ export default function Home() {
         </h1>
         
         <p className="text-zinc-500 dark:text-zinc-400 text-lg md:text-xl mb-12 max-w-2xl leading-relaxed">
-          A simple directory to discover, filter, and connect with premium caterers in Mumbai. No noise, just quality service.
+          A simple directory to discover, filter, and connect with premium caterers in Mumbai.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
