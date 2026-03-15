@@ -51,10 +51,11 @@ The portal will be available at `http://localhost:3000`.
 ### Backend (Render)
 1. Create a new Web Service on Render.
 2. Connect your GitHub repository.
-3. Use the following environment variables:
-   - `PORT`: 5000 (standard for Render if configured)
-   - `MONGO_URI`: Your MongoDB connection string.
-   - `NODE_ENV`: production
+3. Use the following build settings:
+   - **Root Directory**: `backend`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+4. Use the following environment variables:
 
 ### Frontend (Vercel)
 1. Import your repository into Vercel.
