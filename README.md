@@ -45,3 +45,20 @@ npm run dev
 ```
 
 The portal will be available at `http://localhost:3000`.
+
+## Deployment
+
+### Backend (Render)
+1. Create a new Web Service on Render.
+2. Connect your GitHub repository.
+3. Use the following environment variables:
+   - `PORT`: 5000 (standard for Render if configured)
+   - `MONGO_URI`: Your MongoDB connection string.
+   - `NODE_ENV`: production
+
+### Frontend (Vercel)
+1. Import your repository into Vercel.
+2. In Project Settings > Environment Variables, add:
+   - `NEXT_PUBLIC_API_URL`: The URL of your Render backend (e.g., `https://your-backend.onrender.com/api`).
+3. Deploy.
+
